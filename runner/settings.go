@@ -9,7 +9,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/reducm/config"
+	"github.com/pilu/config"
 )
 
 const (
