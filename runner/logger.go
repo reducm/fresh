@@ -3,7 +3,7 @@ package runner
 import (
 	"fmt"
 	logPkg "log"
-	"time"
+	//"time"
 
 	"github.com/mattn/go-colorable"
 )
@@ -18,11 +18,11 @@ func newLogFunc(prefix string) func(string, ...interface{}) {
 		color = fmt.Sprintf("\033[%sm", logColor(prefix))
 		clear = fmt.Sprintf("\033[%sm", colors["reset"])
 	}
-	//prefix = fmt.Sprintf("%-11s", prefix)
+  prefix = fmt.Sprintf("%-11s", prefix)
 
 	return func(format string, v ...interface{}) {
-		//now := time.Now()
-		//timeString := fmt.Sprintf("%d:%d:%02d", now.Hour(), now.Minute(), now.Second())
+    //now := time.Now()
+    //timeString := fmt.Sprintf("%d:%d:%02d", now.Hour(), now.Minute(), now.Second())
 		//format = fmt.Sprintf("%s%s %s |%s %s", color, timeString, prefix, clear, format)
 		format = fmt.Sprintf("%s %s", clear, format)
 		logger.Printf(format, v...)
